@@ -1,0 +1,57 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  /* Paleta Emlider */
+  --navy:       #0B1F3A;
+  --navy-light: #132848;
+  --navy-mid:   #1A3558;
+  --cream:      #F8F5EE;
+  --cream-dark: #EDE8DC;
+  --ink:        #1C1C1E;
+  --muted:      #6B6B72;
+  --border:     #D8D3C8;
+  --white:      #FFFFFF;
+
+  /* Status colors */
+  --status-sin:   #8C8C8E;
+  --status-ok:    #2E7D4F;
+  --status-warn:  #B05E00;
+  --status-no:    #9B2335;
+
+  /* Tipografía */
+  --font-display: 'Syne', sans-serif;
+  --font-body:    'Inter', sans-serif;
+  --font-mono:    'Syne Mono', monospace;
+
+  /* Sidebar */
+  --sidebar-w: 280px;
+}
+
+html, body { height: 100%; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--cream);
+  color: var(--ink);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--muted); }
+
+/* ── Utility ── */
+.sr-only {
+  position: absolute; width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0,0,0,0); white-space: nowrap; border-width: 0;
+}
+
+/* ── Focus ring ── */
+:focus-visible {
+  outline: 2px solid var(--navy);
+  outline-offset: 2px;
+}
