@@ -28,7 +28,7 @@ export default function ProjectCard({ project, review }: ProjectCardProps) {
           )}
         </div>
         <div className={styles.footer}>
-          <span className={styles.student}>{project.student_name}</span>
+          <span className={styles.genre}>{project.genre}</span>
           <StatusBadge status={status} size="sm" />
         </div>
       </div>
