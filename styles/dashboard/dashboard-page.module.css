@@ -1,0 +1,100 @@
+/* ── Dashboard overview page layout ── */
+
+/* Page wrapper — mobile-first padding */
+.page {
+  padding: var(--space-5) var(--space-4);
+}
+
+@media (min-width: 768px) {
+  .page {
+    padding: var(--space-6) var(--space-6);
+  }
+}
+
+/* Section heading with WAVE mono eyebrow style */
+.sectionHead {
+  margin-bottom: var(--space-5);
+}
+
+.sectionEyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--text-2xs);
+  letter-spacing: var(--track-caps);
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: var(--space-2);
+}
+
+.sectionTitle {
+  font-family: var(--font-display);
+  font-weight: var(--w-black);
+  font-size: var(--text-2xl);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--track-tight);
+  color: var(--ink);
+  text-transform: uppercase;
+}
+
+/* ── Stats row ── */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+@media (min-width: 640px) {
+  .statsGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ── Projects grid ── */
+.projectsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+@media (min-width: 480px) {
+  .projectsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .projectsGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1280px) {
+  .projectsGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Empty state */
+.empty {
+  padding: var(--space-7) var(--space-5);
+  text-align: center;
+  background: var(--white);
+  border: var(--fence);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.emptyTitle {
+  font-family: var(--font-display);
+  font-weight: var(--w-black);
+  font-size: var(--text-xl);
+  color: var(--ink);
+  text-transform: uppercase;
+  margin-bottom: var(--space-2);
+}
+
+.emptyText {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--ink-faint);
+}

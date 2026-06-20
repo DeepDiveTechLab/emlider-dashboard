@@ -1,57 +1,219 @@
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+/* ─────────────────────────────────────────────
+   WAVE Design System — Global CSS
+   Emlider Dashboard · Memphis/Arcade aesthetic
+   ───────────────────────────────────────────── */
 
-:root {
-  /* Paleta Emlider */
-  --navy:       #0B1F3A;
-  --navy-light: #132848;
-  --navy-mid:   #1A3558;
-  --cream:      #F8F5EE;
-  --cream-dark: #EDE8DC;
-  --ink:        #1C1C1E;
-  --muted:      #6B6B72;
-  --border:     #D8D3C8;
-  --white:      #FFFFFF;
-
-  /* Status colors */
-  --status-sin:   #8C8C8E;
-  --status-ok:    #2E7D4F;
-  --status-warn:  #B05E00;
-  --status-no:    #9B2335;
-
-  /* Tipografía */
-  --font-display: 'Syne', sans-serif;
-  --font-body:    'Inter', sans-serif;
-  --font-mono:    'Syne Mono', monospace;
-
-  /* Sidebar */
-  --sidebar-w: 280px;
+/* ── Reset ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-html, body { height: 100%; }
+/* ──────────────────────────────────────
+   WAVE Token Set
+   ────────────────────────────────────── */
+:root {
+  /* ── Neutrals ── */
+  --ink:         #141414;
+  --ink-soft:    #2c2c2a;
+  --ink-faint:   #5d5d56;
+  --paper:       #fbf4e2;
+  --paper-2:     #f1e7cd;
+  --paper-3:     #e7dabb;
+  --white:       #ffffff;
+
+  /* ── Brand primaries ── */
+  --coral:       #ff5a4d;
+  --coral-deep:  #e5392b;
+  --coral-soft:  #ffb3ab;
+  --teal:        #14b3a0;
+  --teal-deep:   #0c8576;
+  --mint:        #8fe3cf;
+  --yellow:      #ffc233;
+  --yellow-deep: #f2a40e;
+  --butter:      #ffe08a;
+  --violet:      #9a7bea;
+  --violet-deep: #6b45d6;
+  --lilac:       #cdbcf4;
+  --cobalt:      #2f4bd1;
+  --cobalt-deep: #1f33a3;
+  --sky:         #a9b8f2;
+  --pink:        #ff7fc4;
+  --pink-hot:    #ff3f9a;
+  --blush:       #ffc4e3;
+
+  /* ── Semantic aliases ── */
+  --bg:              var(--paper);
+  --bg-alt:          var(--paper-2);
+  --surface:         var(--white);
+  --surface-sunk:    var(--paper-2);
+  --surface-invert:  var(--ink);
+  --text:            var(--ink);
+  --text-muted:      var(--ink-faint);
+  --text-invert:     var(--paper);
+  --border:          var(--ink);
+  --accent:          var(--coral);
+  --accent-deep:     var(--coral-deep);
+  --on-accent:       #ffffff;
+  --status-ok:       var(--teal);
+  --status-warn:     var(--yellow);
+  --status-danger:   var(--coral-deep);
+  --focus-ring:      var(--cobalt);
+
+  /* ── Typography ── */
+  --font-display: "Archivo Expanded", "Archivo", system-ui, sans-serif;
+  --font-sans:    "Archivo", system-ui, "Helvetica Neue", Arial, sans-serif;
+  --font-mono:    "Space Mono", ui-monospace, "SFMono-Regular", monospace;
+  --font-arcade:  "Press Start 2P", "Space Mono", monospace;
+
+  --w-regular:   400;
+  --w-medium:    500;
+  --w-semibold:  600;
+  --w-bold:      700;
+  --w-extrabold: 800;
+  --w-black:     900;
+
+  --text-2xs: 10px;
+  --text-xs:  12px;
+  --text-sm:  14px;
+  --text-base: 16px;
+  --text-lg:  18px;
+  --text-xl:  22px;
+  --text-2xl: 28px;
+  --text-3xl: 36px;
+  --text-4xl: 48px;
+
+  --leading-tight:  0.95;
+  --leading-snug:   1.1;
+  --leading-normal: 1.45;
+  --leading-loose:  1.65;
+
+  --track-tight:  -0.02em;
+  --track-normal:  0em;
+  --track-wide:    0.04em;
+  --track-caps:    0.12em;
+
+  /* ── Spacing (8px grid) ── */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  24px;
+  --space-6:  32px;
+  --space-7:  48px;
+  --space-8:  64px;
+  --space-9:  96px;
+
+  /* ── Border radii ── */
+  --radius-0:    0px;
+  --radius-sm:   6px;
+  --radius-md:   12px;
+  --radius-lg:   20px;
+  --radius-xl:   28px;
+  --radius-pill: 999px;
+
+  /* ── Borders / fences ── */
+  --bw:        3px;
+  --bw-bold:   4px;
+  --bw-heavy:  6px;
+  --bw-hair:   2px;
+  --fence:      var(--bw) solid var(--ink);
+  --fence-bold: var(--bw-bold) solid var(--ink);
+
+  /* ── Control heights ── */
+  --control-sm: 36px;
+  --control-md: 44px;
+  --control-lg: 56px;
+
+  /* ── Hard shadows (NO blur) ── */
+  --shadow-xs:    2px 2px 0 var(--ink);
+  --shadow-sm:    3px 3px 0 var(--ink);
+  --shadow:       5px 5px 0 var(--ink);
+  --shadow-lg:    8px 8px 0 var(--ink);
+  --shadow-xl:   12px 12px 0 var(--ink);
+  --shadow-coral: 5px 5px 0 var(--coral-deep);
+  --shadow-teal:  5px 5px 0 var(--teal-deep);
+
+  /* ── Motion ── */
+  --ease-pop:  cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-snap: cubic-bezier(0.2, 0, 0, 1);
+  --dur-fast:  90ms;
+  --dur:       150ms;
+  --dur-slow:  260ms;
+
+  /* ── Layout ── */
+  --sidebar-w: 272px;
+  --topbar-h:  52px;
+}
+
+/* ──────────────────────────────────────
+   Base
+   ────────────────────────────────────── */
+html, body {
+  height: 100%;
+}
 
 body {
-  font-family: var(--font-body);
-  background: var(--cream);
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  background: var(--bg);
   color: var(--ink);
-  line-height: 1.5;
+  line-height: var(--leading-normal);
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* ── Scrollbar ── */
-::-webkit-scrollbar { width: 6px; height: 6px; }
-::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: var(--muted); }
-
-/* ── Utility ── */
-.sr-only {
-  position: absolute; width: 1px; height: 1px;
-  padding: 0; margin: -1px; overflow: hidden;
-  clip: rect(0,0,0,0); white-space: nowrap; border-width: 0;
+/* ──────────────────────────────────────
+   Scrollbar
+   ────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--ink-faint);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ink);
 }
 
-/* ── Focus ring ── */
+/* ──────────────────────────────────────
+   Focus ring
+   ────────────────────────────────────── */
 :focus-visible {
-  outline: 2px solid var(--navy);
+  outline: var(--bw-bold) solid var(--focus-ring);
   outline-offset: 2px;
+}
+
+/* ──────────────────────────────────────
+   Utilities
+   ────────────────────────────────────── */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* ── WAVE press mechanic ──
+   Sink into shadow on :active.
+   Apply to any interactive fenced element. */
+.wave-press {
+  transition:
+    transform var(--dur-fast) var(--ease-snap),
+    box-shadow var(--dur-fast) var(--ease-snap);
+}
+.wave-press:active:not(:disabled) {
+  transform: translate(3px, 3px);
+  box-shadow: 2px 2px 0 var(--ink) !important;
 }

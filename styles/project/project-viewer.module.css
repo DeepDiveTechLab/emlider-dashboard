@@ -1,0 +1,325 @@
+/* ── ProjectViewer — container + subcomponent styles ── */
+
+/* Root column layout */
+.viewer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+}
+
+/* ── Project Header ── */
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-4) var(--space-5);
+  background: var(--surface);
+  border-bottom: var(--fence);
+  flex-shrink: 0;
+  flex-wrap: wrap;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--text-2xs);
+  letter-spacing: var(--track-caps);
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: var(--space-1);
+}
+
+.projectTitle {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: var(--w-black);
+  color: var(--ink);
+  letter-spacing: var(--track-tight);
+  text-transform: uppercase;
+  line-height: var(--leading-snug);
+}
+
+@media (min-width: 768px) {
+  .projectTitle {
+    font-size: var(--text-2xl);
+  }
+}
+
+.filmTitle {
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-style: italic;
+  color: var(--ink-faint);
+  margin-top: var(--space-1);
+}
+
+/* Accent bar left-side rule on header */
+.headerAccent {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 6px;
+}
+
+/* ── Tab bar ── */
+.tabBar {
+  display: flex;
+  background: var(--surface);
+  border-bottom: var(--fence);
+  flex-shrink: 0;
+  overflow-x: auto;
+  /* Hide scrollbar but keep scrolling */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.tabBar::-webkit-scrollbar {
+  display: none;
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 10px var(--space-4);
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  color: var(--ink-faint);
+  white-space: nowrap;
+  border-bottom: 3px solid transparent;
+  transition: color var(--dur-fast), border-color var(--dur-fast);
+  flex-shrink: 0;
+}
+
+.tab:hover {
+  color: var(--ink);
+}
+
+.tab.tabActive {
+  color: var(--ink);
+  font-weight: var(--w-bold);
+}
+
+.tabMissingDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--ink-faint);
+  opacity: 0.4;
+  flex-shrink: 0;
+}
+
+/* ── Content + review panel row ── */
+.body {
+  flex: 1;
+  display: flex;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.contentArea {
+  flex: 1;
+  min-width: 0;
+  overflow-y: auto;
+}
+
+/* iframe fills content area */
+.iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: var(--white);
+  min-height: calc(100dvh - 160px);
+  display: block;
+}
+
+/* ── Empty doc placeholder ── */
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-8) var(--space-5);
+  min-height: 400px;
+  text-align: center;
+}
+
+.emptyIcon {
+  font-size: 48px;
+  margin-bottom: var(--space-4);
+}
+
+.emptyTitle {
+  font-family: var(--font-display);
+  font-weight: var(--w-black);
+  font-size: var(--text-xl);
+  color: var(--ink);
+  text-transform: uppercase;
+  margin-bottom: var(--space-2);
+}
+
+.emptyText {
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  color: var(--ink-faint);
+  max-width: 340px;
+  line-height: var(--leading-loose);
+}
+
+.emptyRule {
+  margin-top: var(--space-5);
+  height: 4px;
+  width: 48px;
+  border-radius: 2px;
+}
+
+/* ── Review Panel (admin only) ── */
+.reviewPanel {
+  width: 280px;
+  flex-shrink: 0;
+  background: var(--surface);
+  border-left: var(--fence);
+  padding: var(--space-5);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+/* Review panel hidden on mobile, shown on desktop */
+@media (max-width: 1023px) {
+  .reviewPanel {
+    display: none;
+  }
+}
+
+.reviewPanelTitle {
+  font-family: var(--font-display);
+  font-weight: var(--w-black);
+  font-size: var(--text-sm);
+  color: var(--ink);
+  text-transform: uppercase;
+  letter-spacing: var(--track-tight);
+  padding-bottom: var(--space-4);
+  border-bottom: var(--fence);
+  flex-shrink: 0;
+}
+
+.reviewSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.reviewLabel {
+  font-family: var(--font-mono);
+  font-size: var(--text-2xs);
+  font-weight: var(--w-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--track-caps);
+  color: var(--ink-faint);
+}
+
+.reviewSelect {
+  padding: 9px 10px;
+  border: var(--fence);
+  border-radius: var(--radius-md);
+  background: var(--bg);
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  color: var(--ink);
+  cursor: pointer;
+  appearance: none;
+  width: 100%;
+}
+
+.reviewSelect:focus {
+  outline: none;
+  border-color: var(--cobalt);
+  box-shadow: 0 0 0 2px rgba(47, 75, 209, 0.15);
+}
+
+.reviewTextarea {
+  padding: 9px 10px;
+  border: var(--fence);
+  border-radius: var(--radius-md);
+  background: var(--bg);
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  color: var(--ink);
+  resize: vertical;
+  line-height: var(--leading-normal);
+  width: 100%;
+  min-height: 120px;
+}
+
+.reviewTextarea:focus {
+  outline: none;
+  border-color: var(--cobalt);
+  box-shadow: 0 0 0 2px rgba(47, 75, 209, 0.15);
+}
+
+.reviewMeta {
+  font-family: var(--font-mono);
+  font-size: var(--text-2xs);
+  color: var(--ink-faint);
+  font-style: italic;
+}
+
+.saveBtn {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  border: var(--fence);
+  border-radius: var(--radius-lg);
+  color: var(--white);
+  font-family: var(--font-display);
+  font-weight: var(--w-black);
+  font-size: var(--text-sm);
+  letter-spacing: var(--track-caps);
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--dur-fast) var(--ease-snap),
+              box-shadow var(--dur-fast) var(--ease-snap);
+}
+
+.saveBtn:hover {
+  box-shadow: var(--shadow);
+}
+
+.saveBtn:active {
+  transform: translate(3px, 3px);
+  box-shadow: none;
+}
+
+.saveBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Doc delivery checklist in review panel */
+.docList {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: var(--space-2);
+}
+
+.docListItem {
+  display: flex;
+  gap: var(--space-2);
+  align-items: center;
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+}
+
+.docCheck {
+  font-size: 13px;
+  flex-shrink: 0;
+}

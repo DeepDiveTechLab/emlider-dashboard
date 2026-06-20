@@ -1,0 +1,234 @@
+/* ── Login — WAVE arcade console entry screen ── */
+
+/* Full-page wrapper — ink canvas with dot texture feel */
+.page {
+  min-height: 100dvh;
+  background: var(--ink);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Top header bar */
+.header {
+  padding: var(--space-4) var(--space-5);
+  border-bottom: var(--bw) solid rgba(255, 255, 255, 0.06);
+  flex-shrink: 0;
+}
+
+.headerInner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.logoMark {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  border: var(--bw) solid rgba(255, 255, 255, 0.15);
+  background: var(--coral);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: var(--w-black);
+  font-size: var(--text-xs);
+  color: var(--white);
+  letter-spacing: var(--track-caps);
+  flex-shrink: 0;
+}
+
+.headerSchool {
+  font-family: var(--font-display);
+  font-weight: var(--w-black);
+  font-size: var(--text-sm);
+  color: var(--white);
+  letter-spacing: var(--track-caps);
+  text-transform: uppercase;
+}
+
+.headerDept {
+  font-family: var(--font-mono);
+  font-size: var(--text-2xs);
+  color: rgba(255, 255, 255, 0.35);
+  letter-spacing: var(--track-caps);
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+/* Main centered area */
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-6) var(--space-4);
+  gap: var(--space-5);
+}
+
+/* Login card — white WAVE card on ink canvas */
+.card {
+  background: var(--white);
+  border: var(--fence-bold);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xl);
+  width: 100%;
+  max-width: 440px;
+  overflow: hidden;
+}
+
+/* Card header strip */
+.cardHeader {
+  background: var(--paper);
+  padding: var(--space-6) var(--space-6) var(--space-5);
+  border-bottom: var(--fence);
+  text-align: center;
+}
+
+.cardIcon {
+  font-family: var(--font-arcade);
+  font-size: var(--text-xs);
+  color: var(--coral);
+  display: block;
+  margin-bottom: var(--space-3);
+  letter-spacing: var(--track-caps);
+}
+
+.cardTitle {
+  font-family: var(--font-display);
+  font-weight: var(--w-black);
+  font-size: var(--text-xl);
+  color: var(--ink);
+  text-transform: uppercase;
+  letter-spacing: var(--track-tight);
+  margin-bottom: var(--space-2);
+}
+
+.cardSubtitle {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--ink-faint);
+  letter-spacing: var(--track-caps);
+  text-transform: uppercase;
+}
+
+/* Form body */
+.form {
+  padding: var(--space-5) var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: var(--text-2xs);
+  font-weight: var(--w-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--track-caps);
+  color: var(--ink-faint);
+}
+
+.input {
+  padding: 11px var(--space-4);
+  border: var(--fence);
+  border-radius: var(--radius-md);
+  background: var(--bg);
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  color: var(--ink);
+  width: 100%;
+  transition: border-color var(--dur-fast), box-shadow var(--dur-fast);
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--cobalt);
+  box-shadow: 0 0 0 2px rgba(47, 75, 209, 0.15);
+}
+
+/* Error / success box */
+.alertBox {
+  padding: 10px var(--space-4);
+  border-radius: var(--radius-md);
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  line-height: var(--leading-normal);
+  border: var(--bw) solid var(--ink);
+}
+
+.alertBox.error {
+  background: var(--coral-soft);
+  color: var(--coral-deep);
+}
+
+.alertBox.success {
+  background: var(--mint);
+  color: var(--teal-deep);
+}
+
+/* Submit button */
+.btn {
+  width: 100%;
+  padding: 13px;
+  border: var(--fence);
+  border-radius: var(--radius-lg);
+  background: var(--coral);
+  color: var(--white);
+  font-family: var(--font-display);
+  font-weight: var(--w-black);
+  font-size: var(--text-base);
+  letter-spacing: var(--track-caps);
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: var(--shadow-coral);
+  margin-top: var(--space-1);
+  transition:
+    transform var(--dur-fast) var(--ease-snap),
+    box-shadow var(--dur-fast) var(--ease-snap);
+}
+
+.btn:hover {
+  box-shadow: 7px 7px 0 var(--coral-deep);
+}
+
+.btn:active {
+  transform: translate(4px, 4px);
+  box-shadow: 1px 1px 0 var(--coral-deep);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Access note */
+.accessNote {
+  padding: var(--space-4) var(--space-6);
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: var(--text-2xs);
+  color: var(--ink-faint);
+  border-top: var(--fence);
+  line-height: var(--leading-loose);
+  letter-spacing: var(--track-wide);
+  text-transform: uppercase;
+}
+
+/* Page footer */
+.footer {
+  font-family: var(--font-mono);
+  font-size: var(--text-2xs);
+  color: rgba(255, 255, 255, 0.2);
+  text-align: center;
+  letter-spacing: var(--track-wide);
+}

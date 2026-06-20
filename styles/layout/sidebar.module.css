@@ -1,0 +1,166 @@
+/* ── Sidebar — WAVE DS dark console rail ──
+   Mobile (<768px): fixed overlay drawer, starts hidden.
+   Tablet (768–1023px): fixed overlay drawer, togglable.
+   Desktop (≥1024px): in-flow static column, always visible.
+   ────────────────────────────────────────────────── */
+
+/* Base: mobile drawer */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: var(--sidebar-w);
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  background: var(--surface-invert);   /* #141414 — WAVE ink */
+  border-right: var(--bw-heavy) solid var(--ink);
+  overflow: hidden;
+  /* Closed by default on mobile */
+  transform: translateX(-100%);
+  transition: transform var(--dur-slow) var(--ease-snap);
+}
+
+.sidebar.open {
+  transform: translateX(0);
+}
+
+/* Desktop: pull into normal document flow */
+@media (min-width: 1024px) {
+  .sidebar {
+    position: relative;
+    transform: none !important; /* override open/closed JS state */
+    flex-shrink: 0;
+  }
+}
+
+/* ── Brand header ── */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-5) var(--space-4);
+  border-bottom: var(--bw) solid rgba(255, 255, 255, 0.07);
+  flex-shrink: 0;
+}
+
+.brandInitials {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: var(--radius-sm);
+  border: var(--bw) solid rgba(255, 255, 255, 0.2);
+  background: var(--coral);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: var(--w-black);
+  font-size: var(--text-xs);
+  color: var(--white);
+  letter-spacing: var(--track-caps);
+  flex-shrink: 0;
+}
+
+.brandText {
+  min-width: 0;
+}
+
+.brandName {
+  font-family: var(--font-display);
+  font-weight: var(--w-black);
+  font-size: var(--text-xs);
+  color: var(--paper);
+  letter-spacing: var(--track-caps);
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+.brandDept {
+  font-family: var(--font-mono);
+  font-size: var(--text-2xs);
+  color: rgba(251, 244, 226, 0.35);
+  letter-spacing: var(--track-wide);
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+/* ── Navigation ── */
+.nav {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--space-3) 0;
+}
+
+.navSection {
+  margin-bottom: var(--space-2);
+}
+
+.navDivider {
+  padding: var(--space-4) var(--space-5) var(--space-1);
+  font-family: var(--font-mono);
+  font-size: var(--text-2xs);
+  letter-spacing: var(--track-caps);
+  color: rgba(251, 244, 226, 0.25);
+  text-transform: uppercase;
+}
+
+/* ── Footer / user strip ── */
+.footer {
+  padding: var(--space-4);
+  border-top: var(--bw) solid rgba(255, 255, 255, 0.07);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-shrink: 0;
+}
+
+.footerInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.footerName {
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  font-weight: var(--w-bold);
+  color: var(--paper);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.footerRole {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: rgba(251, 244, 226, 0.35);
+  text-transform: uppercase;
+  letter-spacing: var(--track-caps);
+  margin-top: 2px;
+}
+
+.logoutBtn {
+  background: rgba(255, 255, 255, 0.06);
+  border: var(--bw-hair) solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-sm);
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  color: rgba(251, 244, 226, 0.45);
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition:
+    background var(--dur-fast),
+    color var(--dur-fast),
+    border-color var(--dur-fast);
+}
+
+.logoutBtn:hover {
+  background: rgba(229, 57, 43, 0.2);
+  color: var(--coral);
+  border-color: rgba(229, 57, 43, 0.3);
+}

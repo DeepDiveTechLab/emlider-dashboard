@@ -1,0 +1,83 @@
+/* ── ProjectCard — WAVE fenced card with accent stripe ── */
+
+.card {
+  background: var(--white);
+  border: var(--fence);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  transition:
+    transform var(--dur-fast) var(--ease-snap),
+    box-shadow var(--dur-fast) var(--ease-snap);
+}
+
+.card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.card:active {
+  transform: translate(3px, 3px);
+  box-shadow: var(--shadow-xs);
+}
+
+/* Color stripe across top */
+.stripe {
+  height: 10px;
+  display: block;
+  border-bottom: var(--fence);
+  flex-shrink: 0;
+}
+
+/* Card body */
+.body {
+  padding: var(--space-4) var(--space-5);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+/* Brand name / project identifier */
+.brandName {
+  font-family: var(--font-display);
+  font-weight: var(--w-black);
+  font-size: var(--text-lg);
+  line-height: var(--leading-snug);
+  letter-bottom: var(--track-tight);
+  color: var(--ink);
+}
+
+/* Film title — italic, smaller */
+.filmTitle {
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-style: italic;
+  color: var(--ink-faint);
+  margin-top: -6px;
+}
+
+/* Footer row: student + status badge */
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  margin-top: auto;
+  padding-top: var(--space-2);
+  border-top: var(--bw-hair) solid var(--paper-3);
+}
+
+.student {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--ink-faint);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

@@ -1,0 +1,298 @@
+/* ── WorkHub — WAVE admin workspace ── */
+
+.page {
+  padding: var(--space-5) var(--space-4);
+  max-width: 880px;
+}
+
+@media (min-width: 768px) {
+  .page {
+    padding: var(--space-6) var(--space-7);
+  }
+}
+
+.head {
+  margin-bottom: var(--space-5);
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--text-2xs);
+  letter-spacing: var(--track-caps);
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: var(--space-2);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-weight: var(--w-black);
+  font-size: var(--text-2xl);
+  color: var(--ink);
+  letter-spacing: var(--track-tight);
+  text-transform: uppercase;
+  margin-bottom: var(--space-2);
+}
+
+.subtitle {
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  color: var(--ink-faint);
+}
+
+/* ── Tab switcher ── */
+.switchBar {
+  display: flex;
+  gap: 0;
+  margin-bottom: var(--space-5);
+  border-bottom: var(--fence);
+}
+
+.switchBtn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 10px var(--space-4);
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  color: var(--ink-faint);
+  border-bottom: 3px solid transparent;
+  margin-bottom: -3px;
+  transition: color var(--dur-fast), border-color var(--dur-fast);
+}
+
+.switchBtn:hover {
+  color: var(--ink);
+}
+
+.switchBtnActive {
+  color: var(--ink);
+  font-weight: var(--w-bold);
+  border-bottom-color: var(--coral);
+}
+
+.badgePill {
+  background: var(--coral-deep);
+  color: var(--white);
+  font-family: var(--font-mono);
+  font-size: var(--text-2xs);
+  font-weight: var(--w-bold);
+  padding: 2px 6px;
+  border-radius: var(--radius-pill);
+  border: var(--bw-hair) solid var(--ink);
+}
+
+/* ── Add-item form ── */
+.formCard {
+  background: var(--surface);
+  border: var(--fence);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
+}
+
+.formTitle {
+  font-family: var(--font-display);
+  font-weight: var(--w-black);
+  font-size: var(--text-sm);
+  color: var(--ink);
+  text-transform: uppercase;
+  letter-spacing: var(--track-tight);
+}
+
+.input {
+  padding: 10px var(--space-3);
+  border: var(--fence);
+  border-radius: var(--radius-md);
+  background: var(--bg);
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  color: var(--ink);
+  width: 100%;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--cobalt);
+  box-shadow: 0 0 0 2px rgba(47, 75, 209, 0.15);
+}
+
+.textarea {
+  padding: 10px var(--space-3);
+  border: var(--fence);
+  border-radius: var(--radius-md);
+  background: var(--bg);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--ink);
+  resize: vertical;
+  width: 100%;
+  min-height: 100px;
+}
+
+.textarea:focus {
+  outline: none;
+  border-color: var(--cobalt);
+  box-shadow: 0 0 0 2px rgba(47, 75, 209, 0.15);
+}
+
+.submitBtn {
+  align-self: flex-start;
+  padding: 10px var(--space-5);
+  border: var(--fence);
+  border-radius: var(--radius-lg);
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--font-display);
+  font-weight: var(--w-black);
+  font-size: var(--text-sm);
+  letter-spacing: var(--track-caps);
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: var(--shadow-xs);
+}
+
+.submitBtn:hover {
+  box-shadow: var(--shadow-sm);
+}
+
+.submitBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ── Item cards ── */
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.itemCard {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-4);
+  background: var(--white);
+  border: var(--fence);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xs);
+  padding: var(--space-4) var(--space-5);
+}
+
+.itemTitle {
+  font-family: var(--font-display);
+  font-weight: var(--w-black);
+  font-size: var(--text-base);
+  color: var(--ink);
+  text-transform: uppercase;
+  letter-spacing: var(--track-tight);
+}
+
+.itemDesc {
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  color: var(--ink-faint);
+  margin-top: var(--space-1);
+}
+
+.itemContent {
+  font-family: var(--font-mono);
+  font-size: var(--text-2xs);
+  color: var(--ink-soft);
+  background: var(--paper-2);
+  border: var(--bw-hair) solid var(--paper-3);
+  border-radius: var(--radius-sm);
+  padding: var(--space-2) var(--space-3);
+  margin-top: var(--space-2);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.itemDate {
+  font-family: var(--font-mono);
+  font-size: var(--text-2xs);
+  color: var(--ink-faint);
+  margin-top: var(--space-2);
+}
+
+.deleteBtn {
+  background: none;
+  border: var(--bw-hair) solid var(--coral-soft);
+  color: var(--coral-deep);
+  border-radius: var(--radius-sm);
+  padding: 6px 10px;
+  font-family: var(--font-mono);
+  font-size: var(--text-2xs);
+  font-weight: var(--w-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--track-caps);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background var(--dur-fast), border-color var(--dur-fast);
+}
+
+.deleteBtn:hover {
+  background: var(--coral-soft);
+}
+
+/* ── Comment cards ── */
+.commentCard {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-4);
+  background: var(--white);
+  border: var(--fence);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xs);
+  padding: var(--space-4) var(--space-5);
+  transition: opacity var(--dur-fast);
+}
+
+.commentCard.resolved {
+  opacity: 0.4;
+}
+
+.commentMsg {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  color: var(--ink);
+  line-height: var(--leading-normal);
+}
+
+.resolveBtn {
+  background: none;
+  border: var(--fence);
+  color: var(--ink);
+  border-radius: var(--radius-sm);
+  padding: 6px 10px;
+  font-family: var(--font-mono);
+  font-size: var(--text-2xs);
+  font-weight: var(--w-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--track-caps);
+  cursor: pointer;
+  flex-shrink: 0;
+  white-space: nowrap;
+  transition: background var(--dur-fast);
+}
+
+.resolveBtn:hover {
+  background: var(--bg-alt);
+}
+
+/* Empty state */
+.empty {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--ink-faint);
+  font-style: italic;
+}

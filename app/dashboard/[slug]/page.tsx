@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation'
 import { createServerSupabase } from '@/lib/supabase-server'
-import ProjectViewer from '@/components/ProjectViewer'
+import ProjectViewer from '@/components/project/ProjectViewer'
 import { roleForEmail } from '@/lib/types'
 
 interface Props {

@@ -1,6 +1,6 @@
 import { redirect } from 'next/navigation'
 import { createServerSupabase } from '@/lib/supabase-server'
-import DashboardClient from '@/components/DashboardClient'
+import DashboardShell from '@/components/layout/DashboardShell'
 import { roleForEmail } from '@/lib/types'
 
 export default async function DashboardLayout({
@@ -44,13 +44,13 @@ export default async function DashboardLayout({
     .select('*')
 
   return (
-    <DashboardClient
+    <DashboardShell
       profile={profile}
       projects={projects || []}
       reviews={reviews || []}
       userEmail={email}
     >
       {children}
-    </DashboardClient>
+    </DashboardShell>
   )
 }
