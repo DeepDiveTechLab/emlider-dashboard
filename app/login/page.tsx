@@ -10,6 +10,7 @@ const ALLOWED_EMAILS = [
   'cucholotto@gmail.com',
   'director@emlider.edu.mx',
   'coordinacion@emlider.edu.mx',
+  'computacion@emlider.edu.mx',
 ]
 
 export default function LoginPage() {
